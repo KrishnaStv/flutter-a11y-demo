@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_a11y_demo/ImagesAccessibility.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(home: ImageAccessibilitychecks(),));
 }
 
 class MyApp extends StatelessWidget {
