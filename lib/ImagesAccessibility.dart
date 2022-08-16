@@ -1,16 +1,24 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
 
 class ImageAccessibilitychecks extends StatelessWidget {
 
-  var activeImagePath = new AssetImage('assets/images/sunset.jpg');
+  var activeImagePath = new AssetImage('assets/images/sendemailbutton.png');
   var infoImagePath = new AssetImage('assets/images/img.png');
+  var decorativeImagePath = new AssetImage('assets/images/decorativeimage.png');
   var isGERadioButtonSelected = false;
 
   @override
   Widget build(BuildContext context) {
+
+    var decorativeImage = new Image(
+      image: decorativeImagePath,
+      fit: BoxFit.cover,
+      width: 180,
+      height: 150,
+    );
+
     var activeImage = new Image(
       image: activeImagePath,
       fit: BoxFit.cover,
@@ -37,12 +45,50 @@ class ImageAccessibilitychecks extends StatelessWidget {
             ),
             Container(
               child: Semantics(
+                child: Text("Exclude Semantics",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
+                header: true,
+              ),
+            ),
+
+            Semantics(
+              excludeSemantics: true,
+              child: MaterialButton(
+                onPressed: () {},
+                color: Colors.blue,
+                textColor: Colors.white,
+                child: Text("Not Accessible"),
+              ),
+            ),
+
+            Container(
+              child: Semantics(
+                child: Text("Decorative Image",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
+                header: true,
+              ),
+            ),
+
+            Semantics(
+              child: Container(
+                  child: decorativeImage
+              ),
+            ),
+
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              child: Semantics(
                 child: Text("Active Image",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
                 header: true,
               ),
             ),
+
             Semantics(
               child: Container(
                 child: GestureDetector(
@@ -51,15 +97,17 @@ class ImageAccessibilitychecks extends StatelessWidget {
                     scaffold.showSnackBar(
                       SnackBar(
                         content: Text("Active image tap actions"),
-                        action: SnackBarAction(label: 'Okay', onPressed: scaffold.hideCurrentSnackBar),
+                        action: SnackBarAction(label: 'Okay',
+                            onPressed: scaffold.hideCurrentSnackBar),
                       ),
                     );
                   },
                   child: activeImage,
                 )
               ),
-              label: 'sunset as a sea',
+              label: 'Send E-mail',
             ),
+
             SizedBox(
               height: 15,
             ),
@@ -71,12 +119,14 @@ class ImageAccessibilitychecks extends StatelessWidget {
                 header: true,
               ),
             ),
+
             Semantics(
               child: Container(
                   child: infoImage
               ),
-              label: '50% off shopnow',
+              label: '50% off shop now',
             ),
+
             SizedBox(
               height: 15,
             ),
@@ -105,6 +155,7 @@ class ImageAccessibilitychecks extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
             ),
+
             Semantics(
               child: ElevatedButton(
                 child: Text('Tap to Sound'),
@@ -132,6 +183,8 @@ class ImageAccessibilitychecks extends StatelessWidget {
                 },
               },
             ),
+
+
           ],
         ),
       ),
