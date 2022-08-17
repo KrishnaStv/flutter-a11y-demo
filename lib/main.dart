@@ -4,7 +4,7 @@ import 'package:flutter_a11y_demo/TablesAccessibility.dart';
 
 
 void main() {
-  runApp(MaterialApp(home: ImageAccessibilitychecks(),));
+  runApp(MaterialApp(home: TableDataAccessibility(),));
 }
 
 class MyApp extends StatelessWidget {

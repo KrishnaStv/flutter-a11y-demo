@@ -17,87 +17,10 @@ class TableDataAccessibility extends StatelessWidget {
               height: 15,
             ),
             Container(
-              child: Semantics(
-                child: Text("Table Data",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                ),
-                header: true,
-              ),
-            ),
-            Container(
               padding: EdgeInsets.only(left: 15, right: 15),
               child: Center(
                 child: Column(
                   children: [
-                    Divider(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Semantics(
-                          header: true,
-                          child: Text(
-                            'Company',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Semantics(
-                          header: true,
-                          child: Text(
-                            'Jun 2018',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Semantics(
-                          header: true,
-                          child: Text(
-                            'Jun 2019',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Divider(),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Semantics(
-                          label: 'Company: ',
-                          child: Text('Maruthi'),
-                        ),
-                        Semantics(
-                          label: 'June 2018 cost:',
-                          child: Text('1.34L'),
-                        ),
-                        Semantics(
-                          label: 'June 2019 cost',
-                          child: Text('1.10L'),
-                        ),
-                      ],
-                    ),
-
-                    Divider(),
-
-                    MergeSemantics(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Semantics(
-                            label: 'Company: ',
-                            child: Text('Hundai'),
-                          ),
-                          Semantics(
-                            label: 'June 2018 cost:',
-                            child: Text('0.45L'),
-                          ),
-                          Semantics(
-                            label: 'June 2019 cost:',
-                            child: Text('0.42L'),
-                          ),
-                        ],
-                      ),
-                    ),
-
                     SizedBox(
                       height: 45,
                     ),
@@ -149,7 +72,7 @@ class TableDataAccessibility extends StatelessWidget {
                                         },
                                       ),
                                       label: 'First name',
-                                      sortKey: OrdinalSortKey(2),
+                                      sortKey: OrdinalSortKey(3),
                                     ),
                                   ],
                                 ),
@@ -164,7 +87,7 @@ class TableDataAccessibility extends StatelessWidget {
                                       alignment: Alignment.topLeft,
                                       child: Semantics(
                                         child: Text("Last Name"),
-                                        sortKey: OrdinalSortKey(3),
+                                        sortKey: OrdinalSortKey(2),
                                       ),
                                     ),
                                     Semantics(
@@ -206,8 +129,8 @@ class TableDataAccessibility extends StatelessWidget {
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           Future.delayed(Duration(milliseconds: 300), () {
-                            SemanticsService.announce(
-                                "Registration Successfull", TextDirection.ltr);
+                            // SemanticsService.announce(
+                            //     "Registration Successfull", TextDirection.ltr);
                           });
                         }
                       },

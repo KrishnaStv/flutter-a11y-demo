@@ -21,7 +21,6 @@ class ImageAccessibilitychecks extends StatelessWidget {
 
     var activeImage = new Image(
       image: activeImagePath,
-      fit: BoxFit.cover,
       width: 180,
       height: 150,
     );
@@ -61,25 +60,10 @@ class ImageAccessibilitychecks extends StatelessWidget {
                 child: Text("Not Accessible"),
               ),
             ),
-
-            Container(
-              child: Semantics(
-                child: Text("Decorative Image",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                ),
-                header: true,
-              ),
-            ),
-
-            Semantics(
-              child: Container(
-                  child: decorativeImage
-              ),
-            ),
-
             SizedBox(
-              height: 15,
+              height: 35,
             ),
+
             Container(
               child: Semantics(
                 child: Text("Active Image",
@@ -105,7 +89,7 @@ class ImageAccessibilitychecks extends StatelessWidget {
                   child: activeImage,
                 )
               ),
-              label: 'Send E-mail',
+              // label: 'Send E-mail',
             ),
 
             SizedBox(
@@ -124,26 +108,9 @@ class ImageAccessibilitychecks extends StatelessWidget {
               child: Container(
                   child: infoImage
               ),
-              label: '50% off shop now',
+              // label: '50% off shop now',
             ),
 
-            SizedBox(
-              height: 15,
-            ),
-            Container(
-              child: Semantics(
-                child: Text("Buttons",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                ),
-                header: true,
-              ),
-            ),
-            MaterialButton(
-              onPressed: () {},
-              color: Colors.blue,
-              textColor: Colors.white,
-              child: Text('CREATE ACCOUNT'),
-            ),
             SizedBox(
               height: 15,
             ),
@@ -170,21 +137,19 @@ class ImageAccessibilitychecks extends StatelessWidget {
                   );
                 },
               ),
-              customSemanticsActions: {
-                CustomSemanticsAction(label: "Custom Action"): () {
-                  debugPrint("custom action performed");
-                  final scaffold = ScaffoldMessenger.of(context);
-                  scaffold.showSnackBar(
-                    SnackBar(
-                      content: Text("Its Custom Action"),
-                      action: SnackBarAction(label: 'Okay', onPressed: scaffold.hideCurrentSnackBar),
-                    ),
-                  );
-                },
-              },
+              // customSemanticsActions: {
+              //   CustomSemanticsAction(label: "Custom Action"): () {
+              //     debugPrint("custom action performed");
+              //     final scaffold = ScaffoldMessenger.of(context);
+              //     scaffold.showSnackBar(
+              //       SnackBar(
+              //         content: Text("Its Custom Action"),
+              //         action: SnackBarAction(label: 'Okay', onPressed: scaffold.hideCurrentSnackBar),
+              //       ),
+              //     );
+              //   },
+              // },
             ),
-
-
           ],
         ),
       ),
