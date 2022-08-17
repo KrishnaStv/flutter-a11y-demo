@@ -72,7 +72,7 @@ class TableDataAccessibility extends StatelessWidget {
                                         },
                                       ),
                                       label: 'First name',
-                                      sortKey: OrdinalSortKey(3),
+                                      sortKey: OrdinalSortKey(2),
                                     ),
                                   ],
                                 ),
@@ -87,7 +87,7 @@ class TableDataAccessibility extends StatelessWidget {
                                       alignment: Alignment.topLeft,
                                       child: Semantics(
                                         child: Text("Last Name"),
-                                        sortKey: OrdinalSortKey(2),
+                                        sortKey: OrdinalSortKey(3),
                                       ),
                                     ),
                                     Semantics(
@@ -129,8 +129,8 @@ class TableDataAccessibility extends StatelessWidget {
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           Future.delayed(Duration(milliseconds: 300), () {
-                            // SemanticsService.announce(
-                            //     "Registration Successfull", TextDirection.ltr);
+                            SemanticsService.announce(
+                                "Registration Successfull", TextDirection.ltr);
                           });
                         }
                       },

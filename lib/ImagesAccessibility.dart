@@ -52,12 +52,12 @@ class ImageAccessibilitychecks extends StatelessWidget {
             ),
 
             Semantics(
-              excludeSemantics: true,
+              excludeSemantics: false,
               child: MaterialButton(
                 onPressed: () {},
                 color: Colors.blue,
                 textColor: Colors.white,
-                child: Text("Not Accessible"),
+                child: Text("Accessible"),
               ),
             ),
             SizedBox(
@@ -89,7 +89,7 @@ class ImageAccessibilitychecks extends StatelessWidget {
                   child: activeImage,
                 )
               ),
-              // label: 'Send E-mail',
+              label: 'Send E-mail',
             ),
 
             SizedBox(
@@ -108,7 +108,7 @@ class ImageAccessibilitychecks extends StatelessWidget {
               child: Container(
                   child: infoImage
               ),
-              // label: '50% off shop now',
+               label: '50% off shop now',
             ),
 
             SizedBox(
@@ -137,18 +137,18 @@ class ImageAccessibilitychecks extends StatelessWidget {
                   );
                 },
               ),
-              // customSemanticsActions: {
-              //   CustomSemanticsAction(label: "Custom Action"): () {
-              //     debugPrint("custom action performed");
-              //     final scaffold = ScaffoldMessenger.of(context);
-              //     scaffold.showSnackBar(
-              //       SnackBar(
-              //         content: Text("Its Custom Action"),
-              //         action: SnackBarAction(label: 'Okay', onPressed: scaffold.hideCurrentSnackBar),
-              //       ),
-              //     );
-              //   },
-              // },
+              customSemanticsActions: {
+                CustomSemanticsAction(label: "Custom Action"): () {
+                  debugPrint("custom action performed");
+                  final scaffold = ScaffoldMessenger.of(context);
+                  scaffold.showSnackBar(
+                    SnackBar(
+                      content: Text("Its Custom Action"),
+                      action: SnackBarAction(label: 'Okay', onPressed: scaffold.hideCurrentSnackBar),
+                    ),
+                  );
+                },
+              },
             ),
           ],
         ),
